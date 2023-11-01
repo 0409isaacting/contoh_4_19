@@ -1,32 +1,24 @@
-#Contoh_4_19
-def corak(aksara,bilangan):
-    print(aksara*bilangan)
-def menu():
-    print("1.Penyulitan(Encrption)")
-    print("2.Nyahsulit(Decryption)")
-def mesej():
-    teks=str(input("Masukkan nama anda:"))
-    return teks
-def songsang(ayat):
-    str=""
-    for i in ayat:
-        str=i + str
-    print("")
-    corak("#",len(str))
-    print(str)
-    corak("#",len(str))
+#Contoh 4.19
+#Function inputPengguna
+def inputPengguna(mesejInput):
+    print(mesejInput)
+    harga = float(input())
+    return harga
 
-corak("*",32)
-print("Penyulitan/Penyahsulitan Mesej")
-print(corak("*",32))
-menu()
-print("")
-pilihan=int(input("Masukkan pilihan anda"))
+#Procedure kiraPeratus
+def kiraPeratus(h1,h2):
+    peratus = ((h2-h1)/h1)*100
+    peratus = round(peratus, 2)#dua tempat perpuluhan
+    if peratus > 0:
+        print("Keutungan ialah", peratus,"%")
+    else:
+        print("Kerugian ialah",abs(peratus),"%")
 
-if pilihan ==1:
-    mesej_asal=str(input("Masukkan mesej anda:"))
-    songsang(mesej_asal)
+#Atur cara utama
+h1=inputPengguna("Masukkan harga kos RM")
+h2=inputPengguna("Masukkan harga jualan RM")
+
+if h1 == h2:
+    print("Tiada keuntungan")
 else:
-    mesej_sulit=str(input("Masukkan mesej sulit anda:"))
-    songsang(mesej_sulit)
-        
+    kiraPeratus(h1,h2)
